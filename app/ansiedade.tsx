@@ -23,6 +23,7 @@ export default function LandingPageImprovedDark() {
 
   const aboutRef = useRef<HTMLElement>(null)
   const benefitsRef = useRef<HTMLElement>(null)
+  const howItWorksRef = useRef<HTMLElement>(null)
   const testimonialsRef = useRef<HTMLElement>(null)
   const faqRef = useRef<HTMLElement>(null)
   const ctaRef = useRef<HTMLElement>(null)
@@ -114,7 +115,7 @@ export default function LandingPageImprovedDark() {
               { name: 'Sobre', ref: aboutRef, size: 'text-sm' },
               { name: 'Benefícios', ref: benefitsRef, size: 'text-sm' },
               { name: 'Depoimentos', ref: testimonialsRef, size: 'text-base' },
-              { name: 'faq', ref: faqRef, size: 'text-base' },
+              { name: 'Faq', ref: faqRef, size: 'text-base' },
               { name: 'Comprar', ref: ctaRef, size: 'text-base' }
             ].map((item) => (
               <button
@@ -185,7 +186,7 @@ export default function LandingPageImprovedDark() {
                 { name: 'Sobre', ref: aboutRef },
                 { name: 'Benefícios', ref: benefitsRef },
                 { name: 'Depoimentos', ref: testimonialsRef },
-                { name: 'faq', ref: faqRef },
+                { name: 'Faq', ref: faqRef },
                 { name: 'Comprar', ref: ctaRef }
               ].map((item) => (
                 <button
@@ -256,7 +257,7 @@ export default function LandingPageImprovedDark() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className={`absolute inset-0 ${isDarkMode ? 'bg-black' : 'bg-white'} opacity-50`}></div>
+          <div className={`absolute  inset-0 ${isDarkMode ? 'bg-black' : 'bg-white'} opacity-50`}></div>
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-z8r0jSKrXmEFd1qNmV0kBO7sPFXarb.png"
             alt="Ilustração representando ansiedade"
@@ -307,12 +308,12 @@ export default function LandingPageImprovedDark() {
               className="md:w-1/2"
             >
               <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>Sobre o Ebook</h2>
-              <div className={`text-lg mb-6 p-4 rounded-lg ${isDarkMode ? 'bg-blue-900 text-gray-100' : 'bg-blue-100 text-gray-800'}`}>
-                <p className="font-semibold mb-4">
+              <div className={`text-lg mb-6 p-6 rounded-lg ${isDarkMode ? 'bg-blue-900 text-gray-100' : 'bg-blue-100 text-gray-800'}`}>
+                <p className="font-semibold mb-6">
                   "Ansiedade: O Medo do Futuro" é um guia prático e acessível para ajudar você a entender e superar a ansiedade. 
                   Descubra técnicas eficazes, exercícios diários e insights valiosos para transformar sua relação com o futuro.
                 </p>
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-4 mb-8">
                   {[
                     "Técnicas de mindfulness",
                     "Estratégias de enfrentamento",
@@ -320,11 +321,28 @@ export default function LandingPageImprovedDark() {
                     "Histórias inspiradoras"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center">
-                      <CheckCircle className="text-green-500 mr-2 flex-shrink-0" size={20} />
+                      <CheckCircle className="text-green-500 mr-3 flex-shrink-0" size={24} />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
+                <div className="relative">
+                  <Button 
+                    onClick={() => scrollToSection(ctaRef)}
+                    className={`
+                      ${isDarkMode ? 'bg-green-500 hover:bg-green-600' : 'bg-green-600 hover:bg-green-700'} 
+                      text-white font-bold py-3 px-4 sm:py-4 sm:px-6 rounded-lg text-sm sm:text-base md:text-lg lg:text-xl 
+                      transition duration-300 ease-in-out transform hover:scale-105 w-full shadow-lg hover:shadow-xl 
+                      flex items-center justify-center
+                    `}
+                  >
+                    <span className="mr-2 whitespace-nowrap">Comprar Agora e Transformar Sua Vida</span>
+                    <ArrowRight className="inline-block flex-shrink-0" size={24} />
+                  </Button>
+                  <span className="absolute -top-3 right-0 bg-yellow-400 text-black text-xs font-bold py-1 px-2 rounded-full animate-pulse">
+                    Oferta Limitada!
+                  </span>
+                </div>
               </div>
             </motion.div>
             <motion.div
@@ -372,6 +390,40 @@ export default function LandingPageImprovedDark() {
                     </CardTitle>
                   </CardHeader>
                 </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="como-funciona" ref={howItWorksRef} className={`py-16 ${isDarkMode ? 'bg-[#020617]' : 'bg-white'}`}>
+        <div className="container mx-auto px-4">
+          <h2 className={`text-3xl font-bold mb-12 text-center ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>Como Funciona</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: <ShoppingCart size={32} />, text: "Compre o ebook" },
+              { icon: <Download size={32} />, text: "Faça o download" },
+              { icon: <BookOpen size={32} />, text: "Leia e pratique" },
+              { icon: <Sparkles size={32} />, text: "Transforme sua vida" }
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${isDarkMode ? 'bg-blue-900' : 'bg-blue-100'}`}>
+                  <span className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}>{step.icon}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{step.text}</h3>
+                <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {index === 0 && "Adquira o ebook com segurança"}
+                  {index === 1 && "Acesse o conteúdo instantaneamente"}
+                  {index === 2 && "Aplique as técnicas no seu dia a dia"}
+                  {index === 3 && "Veja os resultados e viva sem ansiedade"}
+                </p>
               </motion.div>
             ))}
           </div>
