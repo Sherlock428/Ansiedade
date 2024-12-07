@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { ArrowRight, CheckCircle, Menu, Moon, Sun, X, Star, ShoppingCart, Shield, Clock, Flame, ArrowDown, BookOpen, Download, Brain, Sparkles } from "lucide-react"
+import { ArrowRight, CheckCircle, Menu, Moon, Sun, X, Star, ShoppingCart, Shield, Clock, Flame, ArrowDown, BookOpen, Download, Brain, Sparkles } from 'lucide-react'
 
 export default function LandingPageImprovedDark() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -79,28 +79,28 @@ export default function LandingPageImprovedDark() {
 
   const testimonials = [
     {
-      name: "Maria Silva",
-      text: "Este ebook mudou minha vida! As técnicas de respiração e mindfulness me ajudaram a controlar minha ansiedade de forma incrível. Agora consigo enfrentar situações estressantes com muito mais calma e clareza mental.",
-      rating: 5,
+      name: "Ana Luiza.",
+      text: "Esse ebook mudou minha forma de lidar com a ansiedade no dia a dia. As estratégias são claras, práticas e realmente funcionam. Já estou recomendando para meus alunos e colegas. Vale muito a pena!",
+      rating: 4,
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
       occupation: "Professora",
-      age: 32
+      age: 40
     },
     {
-      name: "João Santos",
-      text: "Finalmente entendi como lidar com meus pensamentos negativos. O plano de ação contra a ansiedade é simplesmente fantástico! Consegui implementar as estratégias no meu dia a dia e vi resultados em poucas semanas.",
+      name: "Keifferson Ferreira",
+      text: "Mano, sério, esse ebook foi um divisor de águas pra mim. Sempre lutei com meus pensamentos negativos e não sabia por onde começar. O plano de ação contra a ansiedade é BRABO demais! As estratégias são simples, mas muito poderosas. Em poucas semanas já tava conseguindo controlar minha mente e focar no que realmente importa. Super recomendo pra quem quer melhorar de dentro pra fora!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80",
-      occupation: "Engenheiro de Software",
-      age: 28
+      image: "https://i.postimg.cc/Px4c76rx/personalcomentario.jpg",
+      occupation: "Personal Trainer",
+      age: 23
     },
     {
-      name: "Ana Oliveira",
-      text: "Recomendo este ebook para todos que sofrem com ansiedade. As estratégias são práticas e fáceis de implementar no dia a dia. Aprendi a identificar meus gatilhos de ansiedade e agora tenho ferramentas para lidar com eles de forma eficaz.",
-      rating: 4,
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80",
-      occupation: "Designer Gráfica",
-      age: 35
+      name: "Felipe L.",
+      text: "Sempre começava mil projetos, mas não conseguia focar nem terminar nada porque minha ansiedade me sabotava. Ficava pensando no resultado e, quando não vinha rápido, já queria desistir. O ebook me ajudou a entender esse ciclo. Tô finalmente tirando as coisas do papel!",
+      rating: 5,
+      image: "https://i.postimg.cc/L8QwY7bW/comentarioautonomo.jpg",
+      occupation: "Autonomo",
+      age: 19
     }
   ]
 
@@ -433,7 +433,7 @@ export default function LandingPageImprovedDark() {
       {/* Testimonials Section */}
       <section id="depoimentos" ref={testimonialsRef} className={`py-16 ${isDarkMode ? 'bg-[#020617]' : 'bg-gray-100'}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold mb-12 text-center ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>O Que Nossos Leitores Dizem</h2>
+          <h2 className={`text-4xl font-bold mb-12 text-center ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>O Que Nossos Leitores Estão Dizendo</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -444,54 +444,77 @@ export default function LandingPageImprovedDark() {
               >
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Card className={`${isDarkMode ? 'bg-[#0f172a] text-gray-100' : 'bg-white'} border-none shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer`}>
-                      <CardHeader>
+                    <Card className={`${isDarkMode ? 'bg-[#0f172a] text-gray-100' : 'bg-white'} border-none shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden`}>
+                      <CardHeader className="pb-2">
                         <div className="flex items-center space-x-4">
                           <Image
                             src={testimonial.image}
                             alt={`Foto de ${testimonial.name}`}
-                            width={50}
-                            height={50}
-                            className="rounded-full object-cover"
+                            width={60}
+                            height={60}
+                            className="rounded-full object-cover w-15 h-15 border-2 border-blue-400 flex-shrink-0"
                           />
-                          <CardTitle className="text-lg font-semibold">{testimonial.name}</CardTitle>
+                          <div>
+                            <CardTitle className="text-lg font-semibold">{testimonial.name}</CardTitle>
+                            <div className="text-sm text-gray-500">
+                              {testimonial.occupation}, {testimonial.age} anos
+                            </div>
+                          </div>
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm mb-4 line-clamp-3 relative">
+                        <p className="text-sm mb-4 line-clamp-4 relative">
                           {testimonial.text}
                           <span className="absolute bottom-0 right-0 bg-gradient-to-l from-white dark:from-[#0f172a] to-transparent w-12 h-6"></span>
                         </p>
-                        <div className="flex">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star 
+                              key={i} 
+                              className={i < Math.floor(testimonial.rating) ? "text-yellow-400" : "text-gray-300"} 
+                              size={16} 
+                              fill={i < Math.floor(testimonial.rating) ? "currentColor" : "none"} 
+                            />
                           ))}
+                          <span className="ml-2 text-xs text-gray-500">
+                            ({testimonial.rating}/5)
+                          </span>
                         </div>
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
                       <DialogTitle className="flex items-center space-x-4">
                         <Image
                           src={testimonial.image}
                           alt={`Foto de ${testimonial.name}`}
-                          width={50}
-                          height={50}
-                          className="rounded-full object-cover"
+                          width={60}
+                          height={60}
+                          className="rounded-full object-cover w-15 h-15 border-2 border-blue-400 flex-shrink-0"
                         />
                         <div>
-                          <p>{testimonial.name}</p>
-                          <p className="text-sm text-gray-500">{testimonial.occupation}, {testimonial.age} anos</p>
+                          <p className="text-xl font-semibold">{testimonial.name}</p>
+                          <div className="text-sm text-gray-500">
+                            {testimonial.occupation}, {testimonial.age} anos
+                          </div>
                         </div>
                       </DialogTitle>
                     </DialogHeader>
                     <DialogDescription>
-                      <p className="mt-4">{testimonial.text}</p>
-                      <div className="flex mt-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="text-yellow-400" size={20} fill="currentColor" />
+                      <p className="mt-4 text-base">{testimonial.text}</p>
+                      <div className="flex items-center mt-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={i < Math.floor(testimonial.rating) ? "text-yellow-400" : "text-gray-300"} 
+                            size={24} 
+                            fill={i < Math.floor(testimonial.rating) ? "currentColor" : "none"} 
+                          />
                         ))}
+                        <span className="ml-2 text-sm text-gray-500">
+                          ({testimonial.rating}/5)
+                        </span>
                       </div>
                     </DialogDescription>
                   </DialogContent>
@@ -562,7 +585,9 @@ export default function LandingPageImprovedDark() {
                       className="rounded-lg shadow-md"
                     />
                   </div>
+                </div>
                   <div className="flex-grow text-center md:text-left">
+                    <div className="flex-grow text-center md:text-left">
                     <p className={`text-5xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-600'} mb-4`}>R$47,90</p>
                     <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-2xl`}>
                       <span className="line-through">R$100,00</span>
