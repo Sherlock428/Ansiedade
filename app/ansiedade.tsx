@@ -87,7 +87,7 @@ export default function LandingPageImprovedDark() {
       age: 40
     },
     {
-      name: "Keifferson Ferreira",
+      name: "keiffison Ferreira",
       text: "Mano, sério, esse ebook foi um divisor de águas pra mim. Sempre lutei com meus pensamentos negativos e não sabia por onde começar. O plano de ação contra a ansiedade é BRABO demais! As estratégias são simples, mas muito poderosas. Em poucas semanas já tava conseguindo controlar minha mente e focar no que realmente importa. Super recomendo pra quem quer melhorar de dentro pra fora!",
       rating: 5,
       image: "https://i.postimg.cc/Px4c76rx/personalcomentario.jpg",
