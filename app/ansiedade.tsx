@@ -79,18 +79,18 @@ export default function LandingPageImprovedDark() {
 
   const testimonials = [
     {
-      name: "Ana Luiza",
-      text: "Esse ebook mudou minha forma de lidar com a ansiedade no dia a dia. As estratégias são claras, práticas e realmente funcionam. Já estou recomendando para meus alunos e colegas. Vale muito a pena!",
-      rating: 4,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      name: "Zelia Lima",
+      text: "Esse e-book está incrível! Comecei a ler e já estou indicando para outras pessoas. Tenho certeza de que será uma grande ajuda para quem enfrenta esses desafios.",
+      rating: 5,
+      image: "https://i.postimg.cc/05h1pJg4/image.png",
       occupation: "Professora",
-      age: 40
+      age: 49
     },
     {
       name: "Keiffison Ferreira",
       text: "Mano, esse ebook mudou tudo pra mim! Sempre lutei com ansiedade e pensamentos negativos, mas o plano de ação é BRABO demais! Simples e direto, me ajudou a controlar a mente e focar no que importa. Em poucas semanas, já vi resultado. Recomendo demais!",
       rating: 5,
-      image: "https://i.postimg.cc/Px4c76rx/personalcomentario.jpg",
+      image: "https://i.postimg.cc/x8RrhRCf/personalcomentario2.jpg",
       occupation: "Personal Trainer",
       age: 23
     },
@@ -98,7 +98,7 @@ export default function LandingPageImprovedDark() {
       name: "Felipe Lima",
       text: "Sempre começava mil projetos, mas não conseguia focar nem terminar nada porque minha ansiedade me sabotava. Ficava pensando no resultado e, quando não vinha rápido, já queria desistir. O ebook me ajudou a entender esse ciclo. Tô finalmente tirando as coisas do papel!",
       rating: 5,
-      image: "https://i.postimg.cc/L8QwY7bW/comentarioautonomo.jpg",
+      image: "https://i.postimg.cc/Cxv95rQ0/comentarioautonomo-2.jpg",
       occupation: "Autonomo",
       age: 19
     }
