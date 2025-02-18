@@ -623,7 +623,7 @@ export default function LandingPageImprovedDark() {
             </Card>
             <div className="mt-8 flex items-center justify-center space-x-4">
               <Flame className="text-blue-500" size={24} />
-              <p className="text-lg font-semibold">Mais de 1000 pessoas já transformaram suas vidas com este ebook!</p>
+              <p className="text-lg font-semibold">Transforme sua vida Agora com este Ebook, Não deixe a Ansiedade te travar!</p>
             </div>
           </motion.div>
         </div>
